@@ -88,20 +88,26 @@ quakeWarning('Las Angeles');
 
 
 const turtleSteps = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
-console.log(turtleSteps);
+
 
 const turtleFL = turtleSteps.filter(function (pair) {
   return (pair[0] >=0 && pair[1] >=0);
 
 });
 
-console.log(turtleFL[0]);
-console.log(turtleFL[1]);
-console.log(turtleFL[2]);
+console.log(turtleFL);
 
 
+const turtsteps = turtleSteps.map(function (pair) {
+  return Math.abs(pair[0]) + Math.abs(pair[1])
+})
+
+console.log(turtsteps);
 
 
+const turtMovement = turtsteps.forEach( function (step, i) {
+  console.log(`Movement #${i+1}: ${step} steps`)
+})
 
 
 
