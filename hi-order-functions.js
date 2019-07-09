@@ -44,7 +44,7 @@ const filteredNames = filter(myNames, function (name) {
   return name[0] === 'R';
 });
 
-console.log(filteredNames); // => ['Rich', 'Ray']
+//console.log(filteredNames); // => ['Rich', 'Ray']
 console.log(filter(myNames, name => name[0] === 'R'));
 
 
@@ -76,12 +76,12 @@ const quakeWarning = hazardWarningCreator('Earthquake Warning');
 
 rocksWarning('Main St and Pacific Ave');
 rocksWarning('Centinela Ave and Olympic Blvd');
-rocksWarning('Atlanta');
-rocksWarning('Dallas');
 
 tornadoWarning('Florida');
+tornadoWarning('Atlanta');
 
 quakeWarning('Las Angeles');
+quakeWarning('Dallas');
 
 
 //turtle
@@ -95,14 +95,14 @@ const turtleFL = turtleSteps.filter(function (pair) {
 
 });
 
-console.log(turtleFL);
+//console.log(turtleFL);
 
 
 const turtsteps = turtleSteps.map(function (pair) {
   return Math.abs(pair[0]) + Math.abs(pair[1])
 })
 
-console.log(turtsteps);
+//console.log(turtsteps);
 
 
 const turtMovement = turtsteps.forEach( function (step, i) {
@@ -112,3 +112,41 @@ const turtMovement = turtsteps.forEach( function (step, i) {
 
 
 //reduce
+
+const testString = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+
+const testArr = testString.split(' ');
+//console.log(testString);
+//console.log(testArr);
+
+function decoder (word) {
+  switch (word.length) {
+  case 3:
+    return ' ';
+  default:
+    return word.toUpperCase()[word.length-1];
+  }
+}
+
+//console.log(decoder('cat'));
+//console.log(decoder('tiger'));
+
+let accum = [];
+function stringDecode (accum, string) {
+
+    return accum + decoder(string);
+
+}
+
+
+console.log(testArr.reduce(stringDecode, []));
+
+
+
+
+
+
+
+
+
+
