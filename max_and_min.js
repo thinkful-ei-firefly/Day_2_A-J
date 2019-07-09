@@ -38,3 +38,5 @@ function min (numbers) {
 
 console.log(min([1, 3, 7, 4, 6, 5]));
 console.log(min([]));
+
+
