@@ -29,7 +29,7 @@ function filter(arr, fn) {
       newArry.push(arr[i]);
     }
   }
- return newArry;
+  return newArry;
 }
 
 // DO NOT EDIT BETWEEN THESE LINES, BUT DO READ THE CODE ----->
@@ -44,16 +44,64 @@ const filteredNames = filter(myNames, function (name) {
   return name[0] === 'R';
 });
 
-console.log(filteredNames) // => ['Rich', 'Ray']
+console.log(filteredNames); // => ['Rich', 'Ray']
+console.log(filter(myNames, name => name[0] === 'R'));
 
 
 
 
 //hazard
 
+function hazardWarningCreator (typeOfWarning) {
+  let warningCounter =0;
+  return function (location) {
+    warningCounter +=1;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+
+    switch (warningCounter) {
+    case 1:
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`);
+      break;
+    default:
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`);
+
+    }
+        
+  };
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const tornadoWarning = hazardWarningCreator('Tornado Warning');
+const quakeWarning = hazardWarningCreator('Earthquake Warning');
+
+rocksWarning('Main St and Pacific Ave');
+rocksWarning('Centinela Ave and Olympic Blvd');
+rocksWarning('Atlanta');
+rocksWarning('Dallas');
+
+tornadoWarning('Florida');
+
+quakeWarning('Las Angeles');
 
 
 //turtle
+
+
+const turtleSteps = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+console.log(turtleSteps);
+
+const turtleFL = turtleSteps.filter(function (pair) {
+  return (pair[0] >=0 && pair[1] >=0);
+
+});
+
+console.log(turtleFL[0]);
+console.log(turtleFL[1]);
+console.log(turtleFL[2]);
+
+
+
+
 
 
 
